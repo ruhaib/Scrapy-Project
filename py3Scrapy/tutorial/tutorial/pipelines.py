@@ -7,6 +7,7 @@
 
 from marcjacobs.models import Product, Images, Skus
 from django.db import DatabaseError
+import json
 
 
 class MarJacobProductPipeline(object):

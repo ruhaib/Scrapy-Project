@@ -94,7 +94,7 @@ FEED_EXPORT_FIELDS = ["product_id", "product_name", "product_category", "source_
 FEED_URI = "NEWmarcjacobs.json"
 
 import sys
-sys.path.append('/home/ruhaib/mysite_project/mysite')
+sys.path.append('/home/ruhaib/MyFirstDjangoApp/mysite')
 
 
 import os
