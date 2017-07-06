@@ -17,6 +17,7 @@ class MarJacobProductPipeline(object):
         product.product_name = item['product_name']
         product.category = item['product_category']
         product.source_url = item['source_url']
+        product.brand = 'MarcJacobs'
         product.save()
 
         images = []
