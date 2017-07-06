@@ -5,19 +5,18 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
-from marcjacobs.models import Product, Images, Skus
-from django.db import DatabaseError
-import json
+from super_store.models import Brand, Product, Images, Skus
 
 
 class MarJacobProductPipeline(object):
     def process_item(self, item, spider):
+        brand = Brand.objects.get(name="MarcJacobs")
         product = Product()
+        product.brand = brand
         product.product_id = item['product_id']
         product.product_name = item['product_name']
         product.category = item['product_category']
         product.source_url = item['source_url']
-        product.brand = 'MarcJacobs'
         product.save()
 
         images = []
